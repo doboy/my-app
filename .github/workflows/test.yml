@@ -9,5 +9,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-    - name: Run Jest
-      uses: stefanoeb/jest-action@1.0.2
+    - name: Run Jest With Coverage
+      uses: ziishaned/jest-reporter-action@v0.0.1
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        test-command: "yarn jest --coverage"
